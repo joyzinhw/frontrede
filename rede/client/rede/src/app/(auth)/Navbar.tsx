@@ -12,8 +12,8 @@ function Navbar() {
         
       <ul className="flex justify-end" style={{ fontWeight: "bold",fontSize: "20px", fontStyle: "italic", alignItems: 'center' }}>
         
-        <li className="ml-4"><a href="/sobre">SOBRE</a></li>
-        <li className="ml-4"><a href="/ajuda">AJUDA</a></li>
+        <li className="ml-4"><a href="/faq">SOBRE</a></li>
+        <li className="ml-4"><a href="/fas">AJUDA</a></li>
       </ul>
     </nav>
   );
