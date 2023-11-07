@@ -6,14 +6,14 @@ function Navbar() {
     <nav className="text-white p-4 flex justify-between" style={{ backgroundColor: "#4E77AD" }}>
       
       <div>
-    <ul className="mr-4"> 
-    <li className="ml-4">
+      <ul className="mr-4"> 
+      <li className="ml-4">
       <a href="/login">
       <FaHome size={50} />
       </a>
-    </li>
-    </ul>
-    </div>
+      </li>
+      </ul>
+      </div>
 
         
       <ul className="flex justify-end" style={{ fontWeight: "bold",fontSize: "20px", fontStyle: "italic", alignItems: 'center' }}>
