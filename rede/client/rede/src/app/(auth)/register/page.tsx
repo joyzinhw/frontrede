@@ -32,16 +32,20 @@ function Register(){
         })
     }
 
+    
     return(
         <>
         <h1 className="text-center" style={{ color: "#21344d", fontSize: "50px", fontWeight: "bold", fontStyle: "italic", alignItems: 'center' }}>registrar</h1>
-        <AuthInput label="nome" newState={setUserName}/>
+          
+
+        <AuthInput label="nome" newState={setUserName} />
         <AuthInput label="email" newState={setEmail}/>
         <AuthInput label="senha" newState={setPassword} isPassword/>
         <AuthInput label="confirme sua senha" newState={setConfirmPassword}isPassword/>
 
         {error.length>0 && <span className="text-red-600">* {error}</span>}
         {sucess.length>0 && <span className="text-green-600">* {sucess}</span>}
+
         <button 
          style={{
         backgroundColor: '#1457ae',
