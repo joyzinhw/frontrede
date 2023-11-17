@@ -1,6 +1,7 @@
 
 import UserContext from "@/context/UserContext";
 import Link from "next/link";
+import { FaInfoCircle , FaQuestionCircle} from 'react-icons/fa';
 import {useContext, useEffect, useState } from "react";
 import { FaAlignLeft, FaCalendar, FaFlag, FaHeart, FaHome, FaPeopleArrows, FaStore, FaUserFriends } from "react-icons/fa";
 import { TbDeviceImac, TbClockHour4 } from 'react-icons/tb'
@@ -27,6 +28,12 @@ function Sidebar() {
                 
 
                 <Link href='/main' className="flex gap-3"> <FaHome className='w-6 h-6'/>pagina inicial</Link>
+                <Link href='/navbar/faq' className="flex gap-3"> <FaInfoCircle className='w-6 h-6'/>sobre</Link>
+                <Link href='/navbar/faqsection' className="flex gap-3"> <FaQuestionCircle className='w-6 h-6'/>ajuda</Link>
+                <Link href='/login' className="flex gap-3"> <FaHome className='w-6 h-6'/>sair</Link>
+                
+                
+               
                 {/* <Link href='' className="flex gap-3"> <FaUserFriends className='w-6 h-6'/>seguindo</Link>
                 <Link href='' className="flex gap-3"> <FaStore className='w-6 h-6' />store</Link>
                 <Link href='' className="flex gap-3" > <FaHeart className='w-6 h-6' />favoritos</Link> 

@@ -21,8 +21,19 @@ export default function RootLayout({
 }) {
   const queryClient = new QueryClient()
   return (
-    <html lang="en">
-      <body className={inter.className}> <QueryClientProvider client={queryClient}> <UserContextProvider>{children} </UserContextProvider>  </QueryClientProvider> </body>
-    </html>
-  )
-}
+    
+    <html lang="pt-br">
+    <head>
+      <meta name="author" content="@joyzinhw, @danielu" />
+      <meta name="description" content="codpet, um site para cadrastro de animais" />
+      <meta name="keywords" content="sites, web, animais, cadrastro, adoção, localizacao" />
+      <meta charSet="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body className={inter.className}><QueryClientProvider client={queryClient}><UserContextProvider>{children}</UserContextProvider></QueryClientProvider>
+    </body>
+    <title>CodPet</title>
+  </html>
+);
+};
