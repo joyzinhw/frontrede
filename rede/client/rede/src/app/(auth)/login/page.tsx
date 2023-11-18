@@ -43,7 +43,7 @@ function Login() {
       const inputStyle: React.CSSProperties = {
         marginTop: '4px',
         backgroundColor: '#fff',
-        paddingLeft: '8px',
+        paddingLeft: '4px',
         color: '#000000',
         border: '1px solid #ccc', // Adicionando uma borda visível
         height: '30px',
@@ -74,8 +74,8 @@ function Login() {
     return (
         <>
           <h1 className="text-center" style={{ color: "#21344d", fontSize: "50px", fontWeight: "bold", fontStyle: "italic", alignItems: 'center' }}>login</h1>
-          <AuthInput label="email: " newState={setEmail} styleLabel={{ fontSize: '22px', fontFamily: 'sans-serif', alignItems: 'center'}} placeholder="digite seu nome"   />
-          <AuthInput label="senha: " newState={setPassword} isPassword styleLabel={{ fontSize: '22px', fontFamily: 'sans-serif',  alignItems: 'center' }} placeholder="digite seu sua senha" />
+          <AuthInput label="nome  " newState={setEmail} styleLabel={{ marginTop: '4px', fontSize: '20px', fontFamily: 'sans-serif', alignItems: 'center'}} placeholder="digite seu nome"   />
+          <AuthInput label="senha " newState={setPassword} isPassword styleLabel={{ marginTop: '4px', fontSize: '20px', fontFamily: 'sans-serif',  alignItems: 'center' }} placeholder="digite seu sua senha" />
 
           {error.length > 0 && <span className="text-red-600">* {error}</span>}
 

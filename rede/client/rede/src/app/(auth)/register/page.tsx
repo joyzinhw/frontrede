@@ -80,10 +80,10 @@ function Register(){
         <h1 className="text-center" style={{ color: "#21344d", fontSize: "50px", fontWeight: "bold", fontStyle: "italic", alignItems: 'center' }}>registrar</h1>
      
 
-        <AuthInput label="nome: "  newState={setUserName} styleLabel={{fontSize: '22px', fontFamily: 'sans-serif', alignItems: 'center'}} placeholder="digite seu nome"  />
-        <AuthInput label="email: " newState={setEmail} styleLabel={{ fontSize: '22px', fontFamily: 'sans-serif',  alignItems: 'center' }} placeholder="digite seu email"/>
-        <AuthInput label="senha: " newState={setPassword} isPassword styleLabel={{ fontSize: '22px', fontFamily: 'sans-serif',  alignItems: 'center' }} placeholder="digite seu sua senha" />
-        <AuthInput label="confirme sua senha: " newState={setConfirmPassword} isPassword styleLabel={{ fontSize: '22px', fontFamily: 'sans-serif', alignItems: 'center' }}placeholder="digite a mesma senha"/>
+        <AuthInput label="nome "  newState={setUserName} styleLabel={{fontSize: '20px', fontFamily: 'sans-serif', alignItems: 'center'}} placeholder="digite seu nome"  />
+        <AuthInput label="email  " newState={setEmail} styleLabel={{ fontSize: '20px', fontFamily: 'sans-serif',  alignItems: 'center' }} placeholder="digite seu email"/>
+        <AuthInput label="senha  " newState={setPassword} isPassword styleLabel={{ fontSize: '20px', fontFamily: 'sans-serif',  alignItems: 'center' }} placeholder="digite seu sua senha" />
+        <AuthInput label="confirme sua senha  " newState={setConfirmPassword} isPassword styleLabel={{ fontSize: '20px', fontFamily: 'sans-serif', alignItems: 'center' }}placeholder="digite a mesma senha"/>
 
         {error.length>0 && <span className="text-red-600">* {error}</span>}
         {success.length>0 && <span className="text-green-600">* {success}</span>}
