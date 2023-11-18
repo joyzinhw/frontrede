@@ -29,12 +29,53 @@ function Login() {
             setError(err.response.data.msg)
         })
     }
+         
 
+    interface AuthInputProps {
+      label: string;
+      newState: React.Dispatch<React.SetStateAction<string>>;
+      isPassword?: boolean;
+      styleLabel?: React.CSSProperties;
+      placeholder?: string;
+    }
+
+    function AuthInput({ label, newState, isPassword, styleLabel, placeholder }: AuthInputProps) {
+      const inputStyle: React.CSSProperties = {
+        marginTop: '4px',
+        backgroundColor: '#fff',
+        paddingLeft: '8px',
+        color: '#000000',
+        border: '1px solid #ccc', // Adicionando uma borda visível
+        height: '30px',
+        outline: 'none',
+        borderRadius: '8px',
+        cursor: 'pointer',
+        boxShadow: '2px 2px 6px #0000007c',
+        width: '100%', 
+        fontStyle: "italic"// Ajuste de largura para preencher o espaço disponível
+      };
+          return (
+            <div className="auth-input">
+            <label style={styleLabel}>
+              {label}
+              <input
+                type={isPassword ? 'password' : 'text'}
+                onChange={(e) => newState(e.target.value)}
+                style={inputStyle}
+                placeholder={placeholder}
+              />
+            </label>
+          </div>
+          );
+        }
+
+
+    
     return (
         <>
           <h1 className="text-center" style={{ color: "#21344d", fontSize: "50px", fontWeight: "bold", fontStyle: "italic", alignItems: 'center' }}>login</h1>
-          <AuthInput label="email: " newState={setEmail}  />
-          <AuthInput label="senha: " newState={setPassword} isPassword />
+          <AuthInput label="email: " newState={setEmail} styleLabel={{ fontSize: '22px', fontFamily: 'sans-serif', alignItems: 'center'}} placeholder="digite seu nome"   />
+          <AuthInput label="senha: " newState={setPassword} isPassword styleLabel={{ fontSize: '22px', fontFamily: 'sans-serif',  alignItems: 'center' }} placeholder="digite seu sua senha" />
 
           {error.length > 0 && <span className="text-red-600">* {error}</span>}
 
