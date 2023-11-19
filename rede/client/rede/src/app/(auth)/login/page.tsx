@@ -9,8 +9,8 @@ import UserContext from "@/context/UserContext";
 
 function Login() {
 
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+    const [email, setEmail] = useState("teste@gmail.com")
+    const [password, setPassword] = useState("teste")
     const [error, setError] = useState("")
     const {setUser} =useContext(UserContext)
      
@@ -29,42 +29,15 @@ function Login() {
             setError(err.response.data.msg)
         })
     }
-         
 
-    interface AuthInputProps {
-      label: string;
-      newState: React.Dispatch<React.SetStateAction<string>>;
-      isPassword?: boolean;
-      styleLabel?: React.CSSProperties;
-      placeholder?: string;
-     
-    }
-
-    function AuthInput({ label, newState, isPassword, styleLabel, placeholder}: AuthInputProps) {
-   
-          return (
-            <div className="auth-input">
-            <label style={styleLabel}>
-              {label}
-              <input
-                 type={isPassword ? 'password' : 'text'}
-                 onChange={(e) => newState(e.target.value)}
-                 value={isPassword ? password : email}
-                 placeholder={placeholder}
-              />
-            </label>
-          </div>
-          );
-        }
-
-
-    
     return (
         <>
           <h1 className="text-center" style={{ color: "#21344d", fontSize: "50px", fontWeight: "bold", fontStyle: "italic", alignItems: 'center' }}>login</h1>
-          <AuthInput label="email  " newState={setEmail} styleLabel={{ marginTop: '4px', fontSize: '24px', fontFamily: 'Inter',}} placeholder='  digite sua email' />
-          <AuthInput label="senha  " newState={setPassword} isPassword styleLabel={{ marginTop: '4px', fontSize: '24px', fontFamily: 'Inter',  alignItems: 'center' }}   placeholder='  digite sua senha'
- />
+      
+          <h1 className="text-center" style={{ color: "#21344d", fontSize: "24px", fontWeight: "bold", fontFamily: 'Inter',fontStyle: "italic", textAlign: 'left' }}>email</h1>  
+          <AuthInput label=" " newState={setEmail} />
+          <h1 className="text-center" style={{ color: "#21344d", fontSize: "24px", fontWeight: "bold", fontFamily: 'Inter',fontStyle: "italic", textAlign: 'left' }}>senha</h1>
+          <AuthInput label=" " newState={setPassword} isPassword />
 
           {error.length > 0 && <span className="text-red-600">* {error}</span>}
 

@@ -1,7 +1,7 @@
 "use client"
 
 import AuthInput from "../../components/AuthInput"
-import {Dispatch, SetStateAction, useState } from "react"
+import {useState } from "react"
 import Link from "next/link"
 import axios from "axios"
 import { makeRequest } from "../../../../axios"
@@ -16,7 +16,7 @@ function Register(){
     const[password, setPassword ] =useState('')
     const[confirmPassword, setConfirmPassword ] =useState('')
     const[error, setError] =useState('')
-    const[success, setSucess] =useState('')
+    const[sucess, setSucess] =useState('')
 
 
     const handleRegister = (e:any)=>{
@@ -32,47 +32,24 @@ function Register(){
         })
     }
 
-         
-    interface AuthInputProps {
-        label: string;
-        newState: React.Dispatch<React.SetStateAction<string>>;
-        isPassword?: boolean;
-        styleLabel?: React.CSSProperties;
-        placeholder?: string;
-      }
-      
-      function AuthInput({ label, newState, isPassword, styleLabel, placeholder }: AuthInputProps) {
-        
-        return (
-          <div className="auth-input">
-            <label style={styleLabel}>
-              {label}
-              <input
-                type={isPassword ? 'password' : 'text'}
-                onChange={(e) => newState(e.target.value)}
-                placeholder={placeholder}
-              />
-            </label>
-          </div>
-        );
-      };
-       
-      
-     
-
+    
     return(
         <>
         <h1 className="text-center" style={{ color: "#21344d", fontSize: "50px", fontWeight: "bold", fontStyle: "italic", alignItems: 'center' }}>registrar</h1>
-     
-
-        <AuthInput label="nome "  newState={setUserName} styleLabel={{fontSize: '24px', fontFamily: 'Inter', alignItems: 'center'}} placeholder=" digite seu nome"  />
-        <AuthInput label="email  " newState={setEmail} styleLabel={{ fontSize: '24px', fontFamily: 'Inter',  alignItems: 'center' }} placeholder=" digite seu email"/>
-        <AuthInput label="senha  " newState={setPassword} isPassword styleLabel={{ fontSize: '24px', fontFamily: 'Inter',  alignItems: 'center' }} placeholder=" digite seu sua senha" />
-        <AuthInput label="confirme sua senha  " newState={setConfirmPassword} isPassword styleLabel={{ fontSize: '24px', fontFamily: 'Inter', alignItems: 'center' }}placeholder="digite a mesma senha"/>
+          
+        <h1 className="text-center" style={{ fontFamily: 'Inter', color: "#21344d", fontSize: "20px", fontWeight: "bold", fontStyle: "italic", textAlign: 'left' }}>nome</h1>
+        <AuthInput label="  " newState={setUserName} />
+        <h1 className="text-center" style={{fontFamily: 'Inter', color: "#21344d", fontSize: "20px", fontWeight: "bold", fontStyle: "italic", textAlign: 'left' }}>email</h1>
+        <AuthInput label=" " newState={setEmail}/>
+        <h1 className="text-center" style={{ fontFamily: 'Inter', color: "#21344d", fontSize: "20px", fontWeight: "bold", fontStyle: "italic", textAlign: 'left' }}>senha</h1>
+          
+        <AuthInput label=" " newState={setPassword} isPassword/>
+        <h1 className="text-center" style={{fontFamily: 'Inter',  color: "#21344d", fontSize: "20px", fontWeight: "bold", fontStyle: "italic", textAlign: 'left' }}>confirme a senha</h1>
+          
+        <AuthInput label="  " newState={setConfirmPassword}isPassword/>
 
         {error.length>0 && <span className="text-red-600">* {error}</span>}
-        {success.length>0 && <span className="text-green-600">* {success}</span>}
-        
+        {sucess.length>0 && <span className="text-green-600">* {sucess}</span>}
 
         <button 
          style={{

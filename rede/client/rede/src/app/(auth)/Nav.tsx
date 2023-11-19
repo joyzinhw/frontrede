@@ -7,7 +7,7 @@ function Nav() {
       <div className="icone" style={{ marginLeft: '30px' }}>
         <ul className="mr-4"> 
           <li className="ml-4">
-            <a aria-label="link do icone de inicio" href="/login">
+            <a aria-label="link do icone de inicio" href="/tela">
               <FaHome size={45} />
             </a>
           </li>
